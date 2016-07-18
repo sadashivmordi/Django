@@ -1,0 +1,11 @@
+#!/usr/bin/ksh
+
+typeset pid
+
+ps -ef | grep -w /home/tools/app5 | grep -v grep | awk '{print $2}'| read pid
+
+if [ $pid ]
+then
+	return 0
+fi
+return 1 
